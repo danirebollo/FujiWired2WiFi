@@ -4,33 +4,6 @@ Preferences preferences;
 
 // #define TIMER_MEASUREMENTS_ON
 
-// TODO:
-// if cache changes and new value is not stored in cache then store it and also process, but if it is already in cache... Maybe is not processing it again?
-// todo: enable / disable LCD controller remote temperature sensor. If enabled, then send temperature from LCD remote sensor as sensor temperature, 
-// if not, temperature needs to be updated by API. 
-
-// Start with master halted, restore status from slave read, then send it to the master and unhalt. Unhalt also after a timeout.
-// separate master and slave into RTOS tasks
-// Hardware bus collision detection
-// Not pulldown data lines if reset...
-
-// ESP32 thermostat with ESPhome and hassio: https://esphome.io/components/climate/thermostat.html
-// Home assistant integration, outside and inside temperature sensors
-// Integrate heating system
-// create altium designer project
-// Create github public page with hardware and software
-
-// index 0: 0b11111111  source
-// index 1: 0b11111111  unknownbit|destination ¿b2=login parte de dest?
-// index 2: 0b00111000  ??|messagetype|writebit|???
-// index 3: 0b11111111  error|fan|mode|enabled
-// index 4: 0b11111111  economy|temperature
-// index 5: 0b11110110  updatemagic|?|swing|swingstep|?
-// index 6: 0b01111111  ?|controllerTemp|controllerPresent
-// index 7: 0b00000000  ?|?|?|?|?|?|?|? Show maintenance mode icon when value is between about 60 and about 131 and about 196 to about 1
-
-// TODO: mensajes solapados enviando a unit
-
 // ############################################################################################################################################################################
 
 /* **************************************************************************************
