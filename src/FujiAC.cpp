@@ -141,7 +141,7 @@ void FujiAC::loopFujiAC()
     }
 }
 
-// TODO: if need to discard frame, (corrupt frame, incomplete...) not send anything and wait until new sincronization (100ms high) on UART line
+
 
 bool FujiAC::waitForFrame()
 {
@@ -759,7 +759,7 @@ void FujiAC::connect(HardwareSerial *serial, FujiControllerType fct, int rxPin, 
         masterState.loginBit = 1;
         masterState.unknownBit = 1;
         masterState.messageType = byte(FujiMessageType::STATUS);
-        masterState.temperature = masterTemperature; // TODO
+        masterState.temperature = masterTemperature;
 
         controllerAddress = static_cast<byte>(FujiAddress::UNIT);
         masterState.unitAddress = controllerAddress;
@@ -831,7 +831,6 @@ void FujiAC::connect(HardwareSerial *serial, FujiControllerType fct, int rxPin, 
 
     if (RESTORE_STATE_ON_STARTUP == 1)
     {
-        // TODO: restore state from eeprom
         FujiFrame ff = getFrameFromEEPROM();
         pendingModificationsState.unitAddress = controllerAddress;
         pendingModificationsState = ff;
@@ -867,7 +866,6 @@ void FujiAC::connectLCDController(HardwareSerial *serial, int rxPin, int txPin)
 /* **************************************************************************************
 ****************************** Secondary functions **************************************
 *************************************************************************************** */
-// TODO: not send frame if time is more than 250ms and throw alert... but send to cache so next time can be sent
 void FujiAC::sendFujiFrame(FujiFrame ff, bool verbose)
 {
 #ifdef TIMER_MEASUREMENTS_ON

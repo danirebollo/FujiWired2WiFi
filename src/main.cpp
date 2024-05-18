@@ -1,26 +1,6 @@
 #include <Arduino.h>
 #include "FujiAC.h"
 
-// -- TODO --
-//  Estado base apagado.
-//  Interfaz web para modificar estado
-//  Replicar estado a remote y leer modificaciones
-//  Rele para que en estado apagado haya bypass.
-//  Rele controlado por esp de forma que pueda activar el bypass.
-// if cache changes and new value is not stored in cache then store it and also process, but if it is already in cache... Maybe is not processing it again?
-// enable / disable LCD controller remote temperature sensor. If enabled, then send temperature from LCD remote sensor as sensor temperature, 
-// if not, temperature needs to be updated by API. 
-
-// Start with master halted, restore status from slave read, then send it to the master and unhalt. Unhalt also after a timeout.
-// separate master and slave into RTOS tasks
-// Hardware bus collision detection
-// Not pulldown data lines if reset...
-
-// ESP32 thermostat with ESPhome and hassio: https://esphome.io/components/climate/thermostat.html
-// Home assistant integration, outside and inside temperature sensors
-// Integrate heating system
-// create altium designer project
-
 unsigned long lastUpdate = millis();
 unsigned long lastUpdate2 = millis();
 

@@ -90,3 +90,33 @@ To get better understanding of the protocol and the library, there are some tool
 - Logic analyzer: to sniff the bus and see the packets. Set to 500 baud, 8N1, parity even.
 - Oscilloscope: to see the signal and voltage levels.
 - python script: included python script "reader.py". Connect ESP32 UART to the computer and write the assigned port in the py file (default is COM3). Run the script to decode the packets and see the parameters.
+
+# TODO software
+- [ ] if need to discard frame, (corrupt frame, incomplete...) not send anything and wait until new sincronization (100ms high) on UART line
+- [ ] Default state is off. Get status from AC UNIT instead to avoid turning it off when MCU restarts
+- [ ] restore state from eeprom if RESTORE_STATE_ON_STARTUP is defined
+- [ ] Web interface to control AC
+- [ ] Web API to control AC
+- [ ] MQTT to control AC
+- [ ] if cache changes and new value is not stored in cache then store it and also process, but if it is already in cache... Maybe is not processing it again?
+- [ ] enable / disable LCD controller remote temperature sensor. If enabled, then send temperature from LCD remote sensor as sensor temperature, if not, temperature needs to be updated by API. 
+- [ ] separate master and slave into RTOS tasks
+
+# TODO HASSIO
+- [ ] ESP32 thermostat with ESPhome and hassio: https://esphome.io/components/climate/thermostat.html HASSIO
+- [ ] Home assistant integration, outside and inside temperature sensors connected to HASSIO
+- [ ] Integrate heating system connected to HASSIO
+- [ ] External temperature sensor connected to HASSIO
+- [ ] External humidity sensor connected to HASSIO
+- [ ] External UNIT power switch connected to HASSIO
+- [ ] External EXTERIOR power switch connected to HASSIO
+- [ ] Control humidifier: with external sensor. Connect humidifier to add humidity to A/C air input if house humidity decreases. Connected to HASSIO
+
+# TODO hardware
+- [ ] Hardware: Avoid pulldown data lines if reset...
+- [ ] create altium designer project
+- [ ] UNIT Power consumption: with external sensor (current transformer)
+- [ ] EXTERIOR Power consumption: with external sensor (current transformer)
+- [ ] Fan only mode WITHOUT powering on external unit due to his high IDLE power consumption (1A). Use external or existing relay
+- [ ] Bypass rele controlled by MCU. If MCU board is off, then bypass is on.
+
