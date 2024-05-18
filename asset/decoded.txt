@@ -1,0 +1,85 @@
+------------------------  Unit to controller
+S01::| 32|:: <-- FF 5F FF CC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20099553, id:        1 
+------------------------  Controller to unit
+S01::| 32|:: <-- DF 7E FF CC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20099767, id:        2 
+
+------------------------ change fan Speed
+S01::| 32|:: <-- DF 7E FF CC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20346097, id:      750 
+S01::| 32|:: <-- FF 5F FF CC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20346771, id:      751 
+S01::| 32|:: <-- DF 7E FF CC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20346833, id:      752 
+S01::| 32|:: <-- FF 5F FF CC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20345882, id:      753
+
+S01::| 32|:: <-- DF 7E F7 DC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, write: 1, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20349420, id:      760 
+S01::| 32|:: <-- FF 7F FF DC ED BF FE FF * mSrc:   0, mDst:   0, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  4,  acError:0, ts: 20349839, id:      761 
+S01::| 32|:: <-- FF 5F FF DC ED BF FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc:  4,  acError:0, ts: 20350105, id:      762 
+
+S01::| 32|:: <-- DF 7E FF DC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20350320, id:      763 
+S01::| 32|:: <-- FF 5F FF DC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20350739, id:      764 
+S01::| 32|:: <-- DF 7E FF DC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20350954, id:      765 
+S01::| 32|:: <-- FF 5F FF DC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20351628, id:      766 
+
+------------------------ change fan speed
+S01::| 32|:: <-- DF 7E FF DC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 2, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20005850, id:     17 
+S01::| 32|:: <-- FF 5F FF DC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 2, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20006320, id:     18 
+S01::| 32|:: <-- DF 7E FF DC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 2, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20006535, id:     19 
+S01::| 32|:: <-- FF 5F FF DC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 2, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20006954, id:     20 
+
+S01::| 32|:: <-- DF 7E F7 EC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 1, write: 1, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20016402, id:     49 
+S01::| 32|:: <-- FF 7F FF EC ED BF FE FF * mSrc:   0, mDst:   0, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  4,  acError:0, ts: 20016872, id:     50 
+S01::| 32|:: <-- FF 5F FF EC ED BF FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc:  4,  acError:0, ts: 20017291, id:     51 
+
+S01::| 32|:: <-- DF 7E FF EC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20017353, id:     52 
+S01::| 32|:: <-- FF 7F FF 7F FF FF FF FF * mSrc:   0, mDst:   0, onOff: 0, mType: 0, temp:  0 | cTemp: 0, acmode: 0, fanmode: 0, write: 0, login: 0, unk: 1, cP:0, uMgc:  0,  acError:1, ts: 20017772, id:     53 
+
+S01::| 32|:: <-- FF 5F FF EC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20017987, id:     54 
+S01::| 32|:: <-- DF 7E FF EC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20018202, id:     55 
+S01::| 32|:: <-- FF 5F FF EC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20018621, id:     56 
+S01::| 32|:: <-- DF 7E FF EC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20018836, id:     57 
+
+--------------------------------------------
+S01::| 32|:: <-- DF 7E FF EC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20314529, id:    956 
+S01::| 32|:: <-- FF 5F FF EC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20314948, id:    957 
+S01::| 32|:: <-- DF 7E FF EC FF FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20315214, id:    958 
+S01::| 32|:: <-- FF 5F FF EC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20314314, id:    959 
+
+S01::| 32|:: <-- DF 7E F7 E4 E7 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 24 | cTemp:24, acmode: 5, fanmode: 1, write: 1, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20336533, id:   1023 
+S01::| 32|:: <-- FF 7F FF 7F FD FF FF FF * mSrc:   0, mDst:   0, onOff: 0, mType: 0, temp:  2 | cTemp: 0, acmode: 0, fanmode: 0, write: 0, login: 0, unk: 1, cP:0, uMgc:  0,  acError:1, ts: 20337003, id:   1024 
+S01::| 32|:: <-- FF 5F FF E4 E7 FF FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 24 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20337218, id:   1025 
+
+S01::| 32|:: <-- DF 7E FF E4 E7 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 24 | cTemp:24, acmode: 5, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20337484, id:   1026 
+S01::| 32|:: <-- FF 5F FF E4 E7 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 24 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20337903, id:   1027 
+S01::| 32|:: <-- DF 7E FF E4 E7 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 24 | cTemp:24, acmode: 5, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20338118, id:   1028 
+S01::| 32|:: <-- FF 5F FF E4 E7 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 24 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20338741, id:   1029 
+--------------------------------------------
+S01::| 32|:: <-- DF 7E FF E4 E7 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 24 | cTemp:24, acmode: 5, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20483536, id:   1470 
+S01::| 32|:: <-- FF 5F FF E4 E7 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 24 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20484210, id:   1471 
+S01::| 32|:: <-- DF 7E FF E4 E7 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 24 | cTemp:24, acmode: 5, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20484272, id:   1472 
+S01::| 32|:: <-- FF 5F FF E4 E7 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 24 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20484640, id:   1473 
+
+S01::| 32|:: <-- DF 7E F7 E4 E9 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 22 | cTemp:24, acmode: 5, fanmode: 1, write: 1, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20491031, id:   1493 
+S01::| 32|:: <-- FF 5F FF E4 E9 FF FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 22 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20491450, id:   1494 
+
+S01::| 32|:: <-- DF 7E FF E4 E9 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 22 | cTemp:24, acmode: 5, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20491665, id:   1495 
+S01::| 32|:: <-- FF 5F FF E4 E9 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 22 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20492135, id:   1496 
+S01::| 32|:: <-- DF 7E FF E4 E9 FF CE FF * mSrc:  32, mDst:   1, onOff: 1, mType: 0, temp: 22 | cTemp:24, acmode: 5, fanmode: 1, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20492350, id:   1497 
+S01::| 32|:: <-- FF 5F FF E4 E9 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 22 | cTemp: 0, acmode: 5, fanmode: 1, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20492769, id:   1498 
+
+-----------------------------------------
+unit siempre envia login: 1
+unit siempre envia desde addr 0 y recibe a addr 1
+
+controller siempre envia login: 0
+controller siempre envia desde addr 32 y recibe a addr 32
+
+unk siempre esta a 1
+controllerpresent siempre es 1
+error siempre es 0 (en funcionamiento normal)
+mtype siempre es 0 (en funcionamiento normal)
+write siempre esta a 0 excepto la 1 vez que se cambia alguna propiedad
+a veces se interceptan mensajes corruptos con src y dest 0, error=1 y controllerpresent=0
+
+LCD::|  1|:: --> FF 5F FF FF EF 5F FE FF   mSrc:   0, mDst:  32, onOff: 0, mType: 0, temp: 16 | cTemp: 0, acmode: 0, fanmode: 0, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts:        0, id:   1527 
+LCD::|  1|:: <-- DF 7E FF FD FF FF CE FF   mSrc:  32, mDst:   1, onOff: 0, mType: 0, temp:  0 | cTemp:24, acmode: 1, fanmode: 0, write: 0, login: 0, unk: 1, cP:1, uMgc:  0,  acError:0, ts: 20422571, id:   1528 
+
+S01::| 32|:: <-- FF 5F FF CC ED 5F FE FF   mSrc:   0, mDst:  32, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 3, write: 0, login: 1, unk: 1, cP:1, uMgc: 10,  acError:0, ts: 20427395, id:   1027 
+S01::| 32|:: --> DF 5E FF CC ED FF FF FF   mSrc:  32, mDst:  33, onOff: 1, mType: 0, temp: 18 | cTemp: 0, acmode: 1, fanmode: 3, write: 0, login: 1, unk: 1, cP:0, uMgc:  0,  acError:0, ts: 20000411, id:   1028 
