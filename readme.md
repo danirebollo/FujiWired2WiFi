@@ -100,6 +100,7 @@ To get better understanding of the protocol and the library, there are some tool
 - python script: included python script "reader.py". Connect ESP32 UART to the computer and write the assigned port in the py file (default is COM3). Run the script to decode the packets and see the parameters.
 
 # TODO software
+- [ ] BUG: At boot, LCD needs to send LOGIN message type (2) to UNIT to be able to control it [src: 32, dst: 1, onOff: 0, type:2, temp: 0, acmod: 0, fanm: 0, write: 0, login: 0, unk: 1, cp: 0, mgc: 0, error: 0]. UNIT reply [src: 0, dst: 32, onOff: 1, type:2, temp: 31, acmod: 7, fanm: 1, write: 0, login: 1, unk: 1, cp: 1, mgc: 0, error: 0]. If not, LCD shows error.
 - [ ] if need to discard frame, (corrupt frame, incomplete...) not send anything and wait until new sincronization (100ms high) on UART line
 - [ ] Default state is off. Get status from AC UNIT instead to avoid turning it off when MCU restarts
 - [ ] restore state from eeprom if RESTORE_STATE_ON_STARTUP is defined
@@ -122,6 +123,7 @@ To get better understanding of the protocol and the library, there are some tool
 
 # TODO hardware
 - [ ] Hardware: Avoid pulldown data lines if reset...
+- [ ] Test different pull-up resistor values (10k is used in indoor unit)
 - [ ] create altium designer project
 - [ ] UNIT Power consumption: with external sensor (current transformer)
 - [ ] EXTERIOR Power consumption: with external sensor (current transformer)
