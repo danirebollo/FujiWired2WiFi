@@ -1,7 +1,10 @@
-FUJITSU HEAVY INDUSTRIES A/C (Air conditioner) library for wired half-duplex UART based protocols
+A/C (Air conditioner) library for wired half-duplex UART based protocols like the used in the Fujitsu ACY100UIA-LL (This bus have different names: RWB remote controller bus, RAC, VRF...). Maybe Daykin AC, GENERAL AC and HIYASU AC can be compatible attending at the compatibility list of [this](https://www.intesis.com/products/ac-interfaces/fujitsu-gateways/fujitsu-knx-inputs-vrf-fj-rc-knx-1i) comertial gateway.
 
 # Introduction
-This library is a ESP32 C++ library for controlling Fujitsu Heavy Industries Air Conditioners models xxxxxx. It is reverse enginereed as no official API is available. The library is based on the work of [this](), [this](), [this]() and [this]() projects.
+This library is a ESP32 C++ library for controlling selected air conditioners. It is reverse enginereed as no official API is available. The library is based on the work of [FujiHeatPump](https://github.com/unreality/FujiHeatPump), [fuji-iot](https://github.com/jaroslawprzybylowicz/fuji-iot/), [FujiHK](https://github.com/unreality/FujiHK)...
+
+## Tested models
+- Fujitsu ACY100UIA-LL: Works perfectly. This is the main model used for development.
 
 # Protocol. Hardware layer
 FUJITSU air conditioners use a half duplex (RX and TX on the same wire), LSB first, 500 baud UART signal with parity control to communicate with the remote controller. 
@@ -26,6 +29,8 @@ This is an example of one packet:
 UNIT address is 0, LCD address is 32. 
 
 We need to act like LCD for the UNIT (slave) and like UNIT for the LCD (master).
+
+lots of sniffed messages: https://github.com/jaroslawprzybylowicz/fuji-iot/blob/master/protocol/fuji_ac_protocol_handler_test.cc
 
 # Software
 ## Library Modes
@@ -74,7 +79,7 @@ The actors on the bus are:
 To flash the MCU, load this library in PlatformIO and flash the MCU using the USB port. The library is tested with ESP32.
 
 # HARDWARE
-The only needed part to be able to talk with the air conditioner is a 500 baud UART signal with parity control. But using the specific hardware described below will make the library more reliable, robust and easy to use, including the following features:
+The only needed part to be able to talk with the air conditioner is a 500 baud / 15V half-duplex UART signal with parity control. Using the specific hardware described below will make the library more reliable, robust and easy to use, including the following features:
 - 15V to 3V3 level shifter
 - Bus write detection / inhibit to avoid collisions
 - Power supply consumption measurement
@@ -84,6 +89,9 @@ The only needed part to be able to talk with the air conditioner is a 500 baud U
 - Easy to use connectors
 - Error LED
 - Mode selector to bypass the MCU and use the air conditioner as usual or put LCD in read-only mode
+
+You can get details about how indoor unit uses the data bus in the (service schematics)[https://bulclima.com/uploads/fileattachment/files/originals/SM_ARHG%2030%2036%20LMLE.pdf] of the unit. The data bus is pull-up by 10k resistor to 15V and the data is writted/transmit using 390R pull down to GND by the controller using uPA2003 (darlington array). 
+The data is readed using a comparator with treshold at 7.7v (bus is arround 15V) so any bellow 7.7V will be interpreted as logical 1. 
 
 ## DEBUG TOOLS
 To get better understanding of the protocol and the library, there are some tools that can be used:
@@ -120,3 +128,26 @@ To get better understanding of the protocol and the library, there are some tool
 - [ ] Fan only mode WITHOUT powering on external unit due to his high IDLE power consumption (1A). Use external or existing relay
 - [ ] Bypass rele controlled by MCU. If MCU board is off, then bypass is on.
 
+# Other AC models and information 
+There are some information about AC control of different brands that maybe aren't compatible with this bus but can be an interesting resource to read:
+
+- (Reverse engineer Fujitsu AC)[https://hackaday.io/project/19473-reverse-engineering-a-fujitsu-air-conditioner-unit]
+- (Integrating Daikin)[https://community.openhab.org/t/integrating-a-daikin-a-c-system/31888]
+- (mitsubishi2mqtt)[https://github.com/gysmo38/mitsubishi2MQTT/blob/master/src/mitsubishi2mqtt/mitsubishi2mqtt.ino]
+- (M-NET-Sniffer)[https://github.com/LenShustek/M-NET-Sniffer]
+- (MHI-AC-Ctrl)[https://github.com/absalom-muc/MHI-AC-Ctrl/tree/master]
+- "Advanced" remote controller: Fujitsu 3NGF9024. Check manual to get more information about the protocol. [Manual UM_DMS002304492_20161007190704_EN](https://www.eurofred.com/es/accesorios-clima/accesorio-fujitsu-mando-a-distancia-con-cable-lcd-uty-rvnym/p/3NGF9024)
+- IntesisBox: Gateway to modbus. [Manual](https://cdn.chipkin.com/assets/uploads/2018/feb/09-02-08-05_intesisbox_fj-rc-mbs-1_user_manual_es.pdf)
+- IntesisBox: Gateway to KNX. [Manual](https://www.intesis.com/docs/librariesprovider11/manuals-design-guides/user-manuals/ac-interfaces/user-manual-inknxfgl001r000.pdf?sfvrsn=153750d7_18)
+- Intesis Fujitsu gateways: (link)[https://www.intesis.com/es/productos/ac-interfaces/pasarelas-de-aire-acondicionado-fujitsu]
+- https://github.com/geoffdavis/esphome-mitsubishiheatpump
+- https://github.com/SwiCago/HeatPump
+- https://nicegear.nz/blog/hacking-a-mitsubishi-heat-pump-air-conditioner/
+- https://rjdekker.github.io/MHI2MQTT/
+- https://community.openhab.org/t/mitsubishi-heavy-x-y-line-protocol/82898
+- https://github.com/iblue/mhi-xy-bus/blob/main/report.pdf
+- https://www.loxone.com/enen/kb/ac-control-air-for-mitsubishi-heavy-industries/
+- https://github.com/crankyoldgit/IRremoteESP8266/issues/660
+- https://github.com/Arnold-n/P1P2MQTT/blob/main/README.md
+- https://github.com/Arnold-n/P1P2MQTT/tree/main
+- add device to mqtt https://github.com/Arnold-n/P1P2MQTT/blob/main/doc/HomeAssistant.md
